@@ -19,7 +19,7 @@ do {
 
             $min = 6;
             $max = 20;
-            $preco = 6;
+            $preco = 6.00;
             $intervalo = [1, 60];
 
             break;
@@ -28,6 +28,7 @@ do {
             print 'Lotofácil selecionada: ';
             $min = 15;
             $max = 20;
+            $preco = 3.50;
             $intervalo = [1, 25];
             break;
         case 3:
@@ -35,6 +36,7 @@ do {
             print 'Quina selecionada: ';
             $min = 5;
             $max = 15;
+            $preco = 3.00;
             $intervalo = [1, 80];
 
             break;
@@ -43,6 +45,7 @@ do {
             print 'Lotomanía selecionada: ';
             $min = 50;
             $max = 50;
+            $preco = 3.00;
             $intervalo = [1, 100];
 
             break;
@@ -51,7 +54,7 @@ do {
             print "Opção inválida tente novamente\n";
             break;
     }
-} while ($loteria > 3 or $loteria < 1);
+} while ($loteria > 4 or $loteria < 1);
 
 print "\nQuantas apostas você deseja gerar: \n";
 do {
@@ -64,7 +67,7 @@ do {
 } while ($quantidade_dezenas < $min or $quantidade_dezenas > $max);
 
 $n = $quantidade_dezenas;
-$k = $preco;
+$k = $min;
 $nk = $n - $k;
 
 $fatorial_k = 1;
@@ -74,14 +77,15 @@ $fatorial_nk = 1;
 for ($i = $quantidade_dezenas; $i >= 1; $i--) {
     $fatorial_n *=  $i;
 }
-for ($i = $preco; $i >= 1; $i--) {
+for ($i = $min; $i >= 1; $i--) {
     $fatorial_k *= $i;
 }
 for ($i = $nk; $i >= 1; $i--) {
     $fatorial_nk *= $i;
 }
 $preco = ($fatorial_n / ($fatorial_k * $fatorial_nk)) * $preco;
-print "Gasto total: R$" . $quantidade_apostas * $preco . ",00\nPreço por aposta: R$$preco,00\n";
+print "\033c";
+print "Valor total: R$" . $quantidade_apostas * $preco . "\nPreço por aposta: R$$preco\n";
 
 for ($i = 0; $i < $quantidade_apostas; $i++) {
     print($i+1 . "º aposta: " . implode(", ",surpresinha($quantidade_dezenas, $intervalo[0], $intervalo[1])) . "\n");
