@@ -1,14 +1,19 @@
 <?php
+print("
+    ------------------------
+    |    loteria caixa     |
+    ------------------------
+    |Qualjogo deseja jogar:|
+    ------------------------
+    |\033[1;092m1° Mega-sena\033[0m          |   
+    ------------------------
+    |\033[1;34m2° Quina\033[0m              |
+    ------------------------
+    |\033[1;95m3° Lotofácil\033[0m          |
+    ------------------------
+    |\033[1;93m4° Lotomania\033[0m          |
+    ------------------------\n");
 
-print "Loterias
-Loterias CAIXA: Já pensou?
-Selecione a loteria desejada:
-
-1.Mega-sena
-2.Lotofácil
-3.Quina
-4.Lotomania
-";
 do {
     $loteria = (int) readline();
 
