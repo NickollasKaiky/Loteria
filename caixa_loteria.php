@@ -19,71 +19,7 @@ do {
         print ("\033[1;091mOpção invalida!!\033[0m\n");
         print ("\033[1;096mTente novamente\033[0m\n");
     }else{
-    switch ($loteria) {<?php
-print("
-    ------------------------
-    |    loteria caixa     |
-    ------------------------
-    |Qualjogo deseja jogar:|
-    ------------------------
-    |\033[1;092m1° Mega-sena\033[0m          |   
-    ------------------------
-    |\033[1;34m2° Quina\033[0m              |
-    ------------------------
-    |\033[1;95m3° Lotofácil\033[0m          |
-    ------------------------
-    |\033[1;93m4° Lotomania\033[0m          |
-    ------------------------\n");
-
-do {
-    $loteria = (int) readline();
-
     switch ($loteria) {
-        case 1:
-            print "\033c";
-            print 'Mega-Sena selecionada: ';
-
-            $min = 6;
-            $max = 20;
-            $preco = 6.00;
-            $intervalo = [1, 60];
-
-            break;
-        case 2:
-            print "\033c";
-            print 'Lotofácil selecionada: ';
-            $min = 15;
-            $max = 20;
-            $preco = 3.50;
-            $intervalo = [1, 25];
-            break;
-        case 3:
-            print "\033c";
-            print 'Quina selecionada: ';
-            $min = 5;
-            $max = 15;
-            $preco = 3.00;
-            $intervalo = [1, 80];
-
-            break;
-        case 4:
-            print "\033c";
-            print 'Lotomanía selecionada: ';
-            $min = 50;
-            $max = 50;
-            $preco = 3.00;
-            $intervalo = [1, 100];
-
-            break;
-
-        default:
-            print "Opção inválida tente novamente\n";
-            break;
-    }
-} while ($loteria > 4 or $loteria < 1);
-
-print "\nQuantas apostas você deseja gerar: \n";
-
         case 1:
             print ("\033c");
             print ("\033[1;092mMega-Sena selecionada: \033[0m");
